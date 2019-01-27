@@ -2,6 +2,36 @@
 // Full Stack Software Engineering/Computer Science program.
 
 
+//*==========* 01/10/19: Reverse Number *==========*
+
+// Good morning! Write a function called reverseNumber that reverses a number.
+
+// Input Example: 
+// 12345
+// 555
+
+// Output Example:  
+// 54321
+// 555
+
+const bigNumber = 1234567;
+
+function reverseNumber(num) {
+  let numString = num.toString();
+  let revNumArray = [];
+
+  for (let i = 0; i < numString.length; i++) {
+    console.log(numString[i]);
+    
+    revNumArray.unshift(numString[i]);
+  }
+
+  return parseInt(revNumArray.join(""));
+}
+
+console.log(reverseNumber(bigNumber));
+
+
 
 //*==========* 01/09/19: Reverse String *==========*
 
