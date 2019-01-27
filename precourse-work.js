@@ -4,6 +4,164 @@
 
 
 
+//*==========* JavaScript: Arrays & Objects *==========*
+
+// getThird takes in an array 
+// it returns the third item in the array
+// if there is no third item, return null
+// Example: getThird(['Doc', 'Biff', 'Marty']) returns 'Marty'
+
+function getThird(array) {
+    if  (array.length >= 3) {
+      return array[2];
+    } else {
+      return null;
+    }
+  }
+  
+  
+  // stringLengths takes in four strings
+  // it returns an array containing the length of each string
+  // Example: stringLengths('mushroom', 'onion', '', 'garlic') returns [8, 5, 0, 6] 
+  
+  function stringLengths(str1, str2, str3, str4) {
+    let objectOfArgs = arguments;
+    const arrayOfArgs = [];
+    
+    for (let key in objectOfArgs) {
+      arrayOfArgs.push(objectOfArgs[key].length);
+    }
+  
+    return arrayOfArgs;
+  }
+  
+  
+  // removeFirst takes in an array
+  // it returns the same array, but with the first item removed
+  // Example: removeFirst(['frog', 'toad', 'cricket', 'skunk']) would
+  //          return ['toad', 'cricket', 'skunk'] 
+  
+  function removeFirst(array) {
+    array.shift();
+    return array;
+  }
+  
+  
+  // swap takes in an array and two indices 
+  // it returns the array with the items at i and j swapped
+  // Example: swap(['unicycle', 'scooter', 'skateboard', 'canoe'], 0, 2) would
+  //          return ['skateboard', 'scooter', 'unicycle', 'canoe'];
+  
+  function swap(array, i, j) {
+    let newItemI = array[j];
+    let newItemJ = array[i];
+    
+    array[i] = newItemI;
+    array[j] = newItemJ;
+    
+    return array;
+  }
+  
+  // getValue takes in an object and a key name
+  // if the key exists in the object, return the value of that key
+  // if not, return null
+  // Example: getValue({ first: 'Gordon', last: 'Peppermill'}, 'last') 
+  //          would return 'Peppermill'
+  
+  function getValue(object, key) {
+    if (object[key] !== undefined) {
+      return object[key];
+    } else {
+      return null;
+    }
+  }
+  
+  
+  // generateCSS takes in three strings containing CSS values
+  // it returns an object with the CSS key value pairs
+  // Example: generateCSS('100px', '70px', 'blue') would return
+  //          { height: '100px', width: '70px', color: 'blue' }
+  
+  function generateCSS(height, width, color) {
+    const objectOfValues = arguments;
+    const arrayOfCssProperties = ['height', 'width', 'color'];
+    const arrayOfValues = [];
+    const newObjectOfValues = {};
+  
+    for (let key in objectOfValues) {
+      arrayOfValues.push(objectOfValues[key]);
+    }
+  
+    for (let i = 0; i < arrayOfCssProperties.length; i++) {
+      newObjectOfValues[arrayOfCssProperties[i]] = arrayOfValues[i];
+    }
+  
+    return newObjectOfValues;
+  }
+  
+  // getValues takes in an object
+  // it returns an array containing the values from that object
+  // Example: getValues({ name: 'Ally', age: 27, job: 'hypnotist' })
+  //          would return ['Ally', 27, 'hypnotist']
+  
+  function getValues(obj) {
+    const newArray = [];
+  
+    for (var key in obj) {
+      newArray.push(obj[key]);
+    }
+  
+    return newArray;
+  }
+  
+  // STRETCH PROBLEMS (NOT REQUIRED)
+  
+  // wrapAround takes in an array
+  // and returns an array with the last item in the first spot
+  // and everything else shifted one index over
+  // Example: wrapAround(['teaspoon', 'meat grinder', 'spatula', 'salad fork'])
+  //          would return ['salad fork', 'teaspoon', 'meat grinder', 'spatula']
+  
+  function wrapAround(array) {
+    let poppedItem = array.pop();
+    array.unshift(poppedItem);
+    return array;
+  }
+  
+  // count takes in an array
+  // and returns an object containing a frequency count for each item in the array
+  // Example: count(['red', 'blue', 'blue', 'pink', 'blue', 'green', 'red']) would
+  //          return { red: 2, blue: 3, pink: 1, green: 1}
+  
+  function count(array) {
+    let redCount = 0;
+    let blueCount = 0;
+    let pinkCount = 0;
+    let greenCount = 0;
+    const counterObject = {};
+  
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] === 'red') {
+        redCount++;
+      } else if (array[i] === 'blue') {
+        blueCount++;
+      } else if (array[i] === 'pink') {
+        pinkCount++;
+      } else if (array[i] === 'green') {
+        greenCount++;
+      }
+    }
+  
+    counterObject.red = redCount;
+    counterObject.blue = blueCount;
+    counterObject.pink = pinkCount;
+    counterObject.green = greenCount;
+  
+    return counterObject;
+  }
+
+
+
 //*==========* JavaScript: Functions *==========*
 
 // addOne takes in a number as a parameter 
