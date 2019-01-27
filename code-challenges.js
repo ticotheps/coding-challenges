@@ -3,6 +3,43 @@
 
 
 
+//*==========* 01/09/19: Reverse String *==========*
+
+// Good morning! Write a function called reverseString that accepts a
+// string and returns a reversed copy of the string.
+
+// Input Example:
+// 'hello world'
+// 'asdf'
+// 'CS rocks!'
+
+// Output Example:
+// 'dlrow olleh'
+// 'fdsa'
+// '!skcor SC'
+
+const codeFamString = "My #CodeFam includes: Jake, Dennis, Marc, Julian, Ryan, Andrew (Lowell), Jamie, and myself."
+
+function reverseString(str) {
+  console.log(str);
+  
+  const strArray = str.split("");
+  console.log(strArray);
+  
+  let revArray = [];
+  console.log(revArray);
+  
+  for (i = 0; i < strArray.length; i++) {
+    revArray.unshift(strArray[i]);
+  }
+
+  return revArray.join("");
+}
+
+console.log(reverseString(codeFamString));
+
+
+
 //*==========* 01/08/19: Longest String *==========*
 
 // Good morning! Write a function that takes an array of strings and return
