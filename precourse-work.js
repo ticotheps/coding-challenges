@@ -1,4 +1,4 @@
-// This coding challenge was completed during the precourse work that was
+// These coding challenges were completed during the precourse work that was
 // required for acceptance into Lambda School's Full Time Full Stack
 // Software Engineering/Computer Science program.
 
