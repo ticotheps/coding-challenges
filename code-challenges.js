@@ -3,6 +3,47 @@
 
 
 
+//*==========* 01/16/19: String to Camel Case *==========*
+
+// Good morning! Complete the function so that it converts dash-delimited
+// ("kebab" case) & underscore-delimited ("snake" case) words into "camel"
+// casing. The first word within the output should be capitalized only if
+// the original word was capitalized.
+
+// toCamelCase("the-stealth-warrior")
+// returns "theStealthWarrior"
+
+// toCamelCase("The_stealth_warrior")
+// returns "TheStealthWarrior"
+
+const warrior = "The-best-player-on-the-golden_state_warriors-is-Steph-Curry."
+
+function toCamelCase(str) {
+  
+  let myArr = str.split('');
+  console.log(myArr);
+  
+  for (let i = 1; i < myArr.length; i++) {
+    
+    if (myArr[i] === '_' || myArr[i] === '-') {
+      
+      myArr[i] = '';
+      myArr[i + 1] = myArr[i + 1].toUpperCase();
+      
+    } else {
+        continue;
+        
+      }
+    
+  }
+  
+  return myArr.join('');
+}
+
+console.log(toCamelCase(warrior));
+
+
+
 //*==========* 01/14/19: Reverse Case *==========*
 
 // Good morning! Write a function that takes in a string, reverses the 'casing'
