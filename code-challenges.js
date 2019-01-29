@@ -2,6 +2,54 @@
 // Full Stack Software Engineering/Computer Science program.
 
 
+
+//*==========* 01/14/19: Reverse Case *==========*
+
+// Good morning! Write a function that takes in a string, reverses the 'casing'
+// of that string, and returns the "reversed-casing" string.
+
+// const string = 'HELLO world!';
+// console.log(reverseCase(string)); // <--- hello WORLD!
+
+const flu = "two EXAMPLES of FLU symptoms ARE diarrhea AND vomiting.";
+
+function reverseCase(str) {
+  
+  let revCaseStr = '';
+  
+  const lower = 'abcdefghijklmnopqrstuvwxyz';
+  
+  const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  
+  for (let i = 0; i < str.length; i++) {
+    
+    if (lower.includes(str[i])) {
+      
+      for (let j = 0; j < lower.length; j++) {
+        if (str[i] === lower[j]) {
+          revCaseStr += upper[j];
+        }
+      }
+      
+    } else if (upper.includes(str[i])) {
+      
+      for (let k = 0; k < upper.length; k++) {
+        if (str[i] === upper[k]) {
+          revCaseStr += lower[k];
+        }
+      }
+      
+    } else revCaseStr += str[i];
+    
+  }
+  
+  return revCaseStr;
+}
+
+console.log(reverseCase(flu));
+
+
+
 //*==========* 01/10/19: Reverse Number *==========*
 
 // Good morning! Write a function called reverseNumber that reverses a number.
